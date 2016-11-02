@@ -19,7 +19,7 @@ values of an existing Entry) and commit the pending changes to the DIT via the W
 * from a single Entry in a Search response, using the ``entry_writable()`` method of the Entry, that returns a new Writable
   Entry (and also creates its Writer cursor)
 
-* as a new instance of the ldap3.abstract.Writer class, using ``Writer()`` that creates a new Writer cursor with an empty ``entries``
+* as a new instance of the ``ldap3.abstract.Writer`` class, using ``Writer()`` that creates a new Writer cursor with an empty ``entries``
   collection. With this cursor you can only create new Entries.
 
 Let's obtain a Writer cursor from the Reader we used in the previous chapter::
@@ -32,7 +32,7 @@ Let's obtain a Writer cursor from the Reader we used in the previous chapter::
     ATTRS  : ['audio', 'businessCategory', 'carLicense', 'cn', 'departmentNumber', 'description', 'destinationIndicator', 'displayName', 'employeeNumber', 'employeeType', 'facsimileTelephoneNumber', 'givenName', 'homePhone', 'homePostalAddress', 'initials', 'internationalISDNNumber', 'jpegPhoto', 'l', 'labeledURI', 'mail', 'manager', 'mobile', 'o', 'objectClass', 'ou', 'pager', 'photo', 'physicalDeliveryOfficeName', 'postOfficeBox', 'postalAddress', 'postalCode', 'preferredDeliveryMethod', 'preferredLanguage', 'registeredAddress', 'roomNumber', 'secretary', 'seeAlso', 'sn', 'st', 'street', 'telephoneNumber', 'teletexTerminalIdentifier', 'telexNumber', 'title', 'uid', 'userCertificate', 'userPKCS12', 'userPassword', 'userSMIMECertificate', 'x121Address', 'x500UniqueIdentifier']
     ENTRIES: 3 [executed at: 2016-10-27T17:57:21.978468]
 
-Entrwies in a Writer cursor are standard Python object, so you can modify them with standard Python code::
+Entries in a Writer cursor are standard Python object, so you can modify them with standard Python code::
 
     >>> w[0]
     DN: cn=b.young,ou=ldap3-tutorial,dc=demo1,dc=freeipa,dc=org - STATUS: Writable - READ TIME: 2016-10-27T17:57:21.978468
